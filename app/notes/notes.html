@@ -7,7 +7,7 @@
       <ul id="notes">
         <li ng-repeat="note in notes track by $index">
           <h2> {{ note.title }} </h2>
-          <div> {{ note.body }} </div>
+          {{ note.body }}
           <a href="#" ng-click="removeNote($index)">(remove)</a>
         </li>
         <li>
