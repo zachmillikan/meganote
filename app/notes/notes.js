@@ -31,13 +31,12 @@
             $scope.note = {};
     }
 
-    $scope.removeNote = function(index) {
-      $scope.notes.splice(index, 1);
-    }
-
     $scope.editNote = function (note) {
             // $scope.editing = true;
             $scope.note = note;
-          }
+    }
+    $scope.removeNote = function(index) {
+      $scope.notes.splice(index, 1);
+    }
   };
 })();
