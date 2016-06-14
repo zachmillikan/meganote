@@ -28,11 +28,16 @@
         $scope.notes = NotesService.notes;
       });
 
+
+    $scope.clearForm = function() {
+      $scope.note = { title: '', body_html: ''};
+    };
+
     $scope.note = {};
     // $scope.message = "seperate controller";
     $scope.saveNote = function() {
       NotesService.create($scope.note)
-      $scope.note = { title: '', body_html: ''};
+      $scope.clearForm();
     }
     $scope.editNote = function (note) {
             // $scope.editing = true;
@@ -41,5 +46,6 @@
     $scope.removeNote = function(index) {
       $scope.notes.splice(index, 1);
     }
+
   };
 })();
