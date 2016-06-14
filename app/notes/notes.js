@@ -23,9 +23,11 @@
   function NotesController($state, $scope, NotesService) {
     $state.go('notes.form');
 
-    NotesService.getNotes();
+    NotesService.getNotes()
+      .then(function() {
+        $scope.notes = NotesService.notes;
+      });
 
-    $scope.notes = [];
     $scope.note = {};
     // $scope.message = "seperate controller";
     $scope.saveNote = function() {
