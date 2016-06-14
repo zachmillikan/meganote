@@ -14,6 +14,18 @@
         service.notes = res.data;
       });
       return notesPromise;
-    }
+    };
+
+    service.create = function(note) {
+      var notesPromise = $http.post('https://meganote.herokuapp.com/notes', {
+        note: note
+      });
+
+      notesPromise.then(function(res) {
+        service.notes.unshift(res.data.note);
+      });
+
+      return notesPromise;
+    };
   }
 }());

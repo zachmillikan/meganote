@@ -31,12 +31,12 @@
     $scope.note = {};
     // $scope.message = "seperate controller";
     $scope.saveNote = function() {
-            $scope.notes.push($scope.note);
-            $scope.note = {};
+      NotesService.create($scope.note)
+      $scope.note = { title: '', body_html: ''};
     }
     $scope.editNote = function (note) {
             // $scope.editing = true;
-            $scope.note = note;
+      $scope.note = note;
     }
     $scope.removeNote = function(index) {
       $scope.notes.splice(index, 1);
