@@ -18,5 +18,15 @@ angular.module('meganote.notes', [
 })
 
 .controller('NotesController', function($scope) {
-  $scope.message = "seperate controller";
+  $scope.notes = [];
+  $scope.note = {};
+  // $scope.message = "seperate controller";
+  $scope.saveNote = function() {
+          $scope.notes.push($scope.note);
+          $scope.note = {};
+  }
+
+  $scope.removeNote = function(index) {
+    $scope.notes.splice(index, 1);
+  }
 });

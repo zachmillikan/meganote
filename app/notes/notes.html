@@ -5,8 +5,14 @@
         New Note
       </button>
       <ul id="notes">
-        <li>Note 1</li> <!-- Throw an ng-repeat, use acrobats -->
-        <li>Note 2</li>
+        <li ng-repeat="note in notes track by $index">
+          <h2> {{ note.title }} </h2>
+          <div> {{ note.body }} </div>
+          <a href="#" ng-click="removeNote($index)">(remove)</a>
+        </li>
+        <li>
+          Note 1
+        </li>
       </ul>
     </nav>
     <main class="col-xs-8" ui-view></main>
