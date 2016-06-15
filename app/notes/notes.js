@@ -36,8 +36,14 @@
     $scope.note = {};
     // $scope.message = "seperate controller";
     $scope.saveNote = function() {
-      NotesService.create($scope.note)
+      if ($scope.note._id) {
+        NotesService.update($scope.note);
+      }
+      else {
+        NotesService.create($scope.note);
+      }
       $scope.clearForm();
+
     }
     $scope.editNote = function (note) {
             // $scope.editing = true;
