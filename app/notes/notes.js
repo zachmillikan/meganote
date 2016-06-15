@@ -41,11 +41,10 @@
     }
     $scope.editNote = function (note) {
             // $scope.editing = true;
-      $scope.note = note;
+      $scope.note = angular.copy(note);
     }
     $scope.removeNote = function(index) {
       $scope.notes.splice(index, 1);
     }
-
   };
 })();
