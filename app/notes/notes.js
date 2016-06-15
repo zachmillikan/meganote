@@ -42,7 +42,7 @@
       else {
         NotesService.create($scope.note);
       }
-      $scope.clearForm();
+        // $scope.clearForm();
 
     }
     $scope.editNote = function (note) {

@@ -37,7 +37,6 @@
         service.removeById(res.data.note._id);
         service.notes.unshift(res.data.note);
       });
-
       return notesPromise;
     };
 
