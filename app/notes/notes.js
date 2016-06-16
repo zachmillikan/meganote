@@ -35,16 +35,24 @@
     $scope.save = function() {
       if ($scope.note._id) {
         NotesService.update($scope.note)
-          .then(function(res) {
+          .then(
+            function(res) {
             $scope.note = res.data.note;
             Flash.create('success', 'It worked!');
+          },
+          function() {
+            Flash.create('danger', 'Ooops something went wrong.')
           });
       }
       else {
         NotesService.create($scope.note)
-          .then(function(res) {
+          .then(
+            function(res) {
             $scope.note = res.data.note;
             Flash.create('success', 'It worked!');
+          },
+          function() {
+            Flash.create('danger', 'Ooops something went wrong.')
           });
       }
     };
