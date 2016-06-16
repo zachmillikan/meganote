@@ -41,7 +41,7 @@
             Flash.create('success', 'It worked!');
           },
           function() {
-            Flash.create('danger', 'Ooops something went wrong.')
+            Flash.create('danger', 'Ooops something went wrong.');
           });
       }
       else {
@@ -52,7 +52,7 @@
             Flash.create('success', 'It worked!');
           },
           function() {
-            Flash.create('danger', 'Ooops something went wrong.')
+            Flash.create('danger', 'Ooops something went wrong.');
           });
       }
     };
