@@ -1,17 +1,17 @@
-<form ng-submit="saveNote()">
+<form ng-submit="save()">
   <p>
     <input
       type="text"
-      ng-model="note.title"
       name="title"
       id="note_title"
-      placeholder="Title your note">
+      placeholder="Title your note"
+      ng-model="note.title">
   </p>
   <p>
     <textarea
       name="body_html"
-      ng-model="note.body"
       placeholder="Just start typing..."
+      ng-model="note.body_html"
       ></textarea>
   </p>
   <div class="form-actions">
@@ -21,6 +21,6 @@
       value="{{ note._id ? 'Update Note' : 'Create Note' }}"
       class="btn btn-default">
 
-    <a ng-click="delete()"><i class="fa fa-trash-o"></i></a>
+    <a ng-click="delete()"><i class="fa fa-trash-o fa-lg"></i></a>
   </div>
 </form>
