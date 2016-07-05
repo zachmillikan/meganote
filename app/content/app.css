@@ -72,7 +72,7 @@ ul#notes {
     ul#notes li:hover {
       color: black; }
     ul#notes li:hover .note-title {
-      color: white; }
+      color: black; }
     ul#notes li .note-title {
       color: black;
       font-family: Merriweather;

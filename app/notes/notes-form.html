@@ -1,6 +1,5 @@
 <form ng-submit="save()">
-  <p>
-    <input
+  <input
       type="text"
       name="title"
       id="note_title"
@@ -8,11 +7,17 @@
       ng-model="note.title">
   </p>
   <p>
-    <textarea
+    <text-angular
       name="body_html"
       placeholder="Just start typing..."
       ng-model="note.body_html"
-      ></textarea>
+      ta-toolbar="[
+        ['bold', 'italics', 'underline'],
+        ['ul', 'ol', 'indent', 'outdent'],
+        ['insertLink'],
+        ['html']
+      ]"
+      ></text-angular>
   </p>
   <div class="form-actions">
     <input
@@ -20,9 +25,7 @@
       name="commit"
       value="{{ note._id ? 'Update Note' : 'Create Note' }}"
       class="btn btn-default">
-
     <a ng-click="delete()"><i class="fa fa-trash-o fa-lg"></i></a>
-
   </div>
 </form>
 
