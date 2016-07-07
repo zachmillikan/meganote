@@ -1,10 +1,11 @@
 (function() {
   'use strict';
-  var app = angular.module('meganote', [
+  angular.module('meganote', [
     'ui.router',
     'ngFlash',
     'textAngular',
-    'meganote.notes'
+    'meganote.notes',
+    'meganote.notesForm',
   ])
     .config(config);
 

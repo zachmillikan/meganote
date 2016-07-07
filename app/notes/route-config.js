@@ -1,7 +1,7 @@
 (function() {
   angular.module('meganote.notes')
-    .config(notesConfig)
-    .controller('NotesController');
+    .config(notesConfig);
+
   notesConfig.$inject = ['$stateProvider'];
   function notesConfig($stateProvider) {
     $stateProvider
@@ -19,7 +19,9 @@
     .state('notes.form', {
       url: '/:noteId',
       templateUrl: 'notes/notes-form.html',
-      controller: 'NotesFormController'
+      controller: 'NotesFormController',
+      controllerAs: 'vm'
+
     });
   }
 
