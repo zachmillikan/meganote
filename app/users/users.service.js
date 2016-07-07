@@ -6,8 +6,10 @@
       ($http, API_BASE) => {
 
         class UsersService {
-          create (users) {
-            $http.get(API_BASE)
+          create (user) {
+            return $http.post('${API_BASE}users', {
+              user,
+            })
               .then(
                 res => {
                   console.log(res.data);
