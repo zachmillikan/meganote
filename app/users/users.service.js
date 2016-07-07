@@ -1,11 +1,21 @@
 {
-  class UsersService {
-    create () {
-      console.log('CREATED!');
-      console.log(user);
-    }
-  }
-
   angular.module('meganote.users')
-    .service('UsersService', UsersService);
+    .service('UsersService', [
+      '$hhtp',
+      'API_BASE',
+      ($http, API_BASE) => {
+
+        class UsersService {
+          create (users) {
+            $http.get(API_BASE)
+              .then(
+                res => {
+                  console.log(res.data);
+                }
+              );
+          }
+        }
+        return new UsersService();
+      }
+    ]);
 }
