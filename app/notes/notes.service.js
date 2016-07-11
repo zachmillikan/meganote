@@ -4,7 +4,7 @@
 
   NotesService.$inject = ['$http', 'API_BASE'];
   function NotesService($http, API_BASE) {
-    const apiURI = '${API_BASE}notes/';
+    const apiURI = `${API_BASE}notes/`;
 
     const service = {
       notes: [],

@@ -1,5 +1,5 @@
 {
-  angular.module('meganotes.user')
+  angular.module('meganote.users')
     .service('AuthToken', ['$window', $window => {
 
       class AuthToken {
