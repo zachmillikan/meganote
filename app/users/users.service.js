@@ -3,11 +3,15 @@
     .service('UsersService', [
       '$http',
       'API_BASE',
+      'AuthToken',
+      'CurrentUser',
       ($http, API_BASE, AuthToken, CurrentUser) => {
 
         const apiURI = '${API_BASE}users/';
 
         class UsersService {
+
+          //Sign Up
           create (user) {
             return $http.post(apiURI, {
               user,
@@ -17,6 +21,15 @@
                   AuthToken.set(res.data.authToken);
                   CurrentUser.set(res.data.user);
                 }
+              );
+          }
+
+          // Update profile
+          update(user) {
+            return $http.put('${apiURI}${user._id}', {user})
+              .then(
+                res => console.log(res.data.user)
+                // res => CurrentUser.set(res.data.user)
               );
           }
         }
