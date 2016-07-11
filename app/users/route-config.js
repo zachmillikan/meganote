@@ -6,9 +6,14 @@
   function usersConfig($stateProvider) {
     $stateProvider
 
-      .state('signup', {
-        url: '/signup',
+      .state('sign-up', {
+        url: '/sign-up',
         template: '<sign-up></sign-up>',
+      })
+
+      .state('user-profile', {
+        url: '/profile',
+        template: '<user-profile></user-profile>'
       });
   }
 }
