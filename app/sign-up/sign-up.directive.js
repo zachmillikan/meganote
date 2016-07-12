@@ -4,7 +4,8 @@
 
       '$state',
       'UsersService',
-      ($state, UsersService) => {
+      'Flash',
+      ($state, UsersService, Flash ) => {
 
         class SignUpController{
           constructor (){
@@ -14,6 +15,9 @@
             UsersService.create(this.user)
               .then(
                 () => $state.go('notes.form', { noteId: undefined })
+              )
+              .catch(
+                () => Flash.create('danger', 'Unable to sign user up, check credentials.')
               );
           }
         }

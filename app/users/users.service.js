@@ -28,8 +28,7 @@
           update(user) {
             return $http.put('${apiURI}${user._id}', {user})
               .then(
-                res => console.log(res.data.user)
-                // res => CurrentUser.set(res.data.user)
+                res => CurrentUser.set(res.data.user)
               );
           }
 

@@ -4,7 +4,8 @@
 
     '$state',
     'UsersService',
-    ($state, UsersService) => {
+    'Flash',
+    ($state, UsersService, Flash) => {
 
       class SignInController {
         submit() {
@@ -12,6 +13,9 @@
           UsersService.login(vm.user)
             .then(
               () => $state.go('notes-form', {noteId: undefined })
+            )
+            .catch(
+              () => Flash.create('danger', 'Unable to log user in, check credentials.')
             );
         }
       }
@@ -49,6 +53,9 @@
                   <a ui-sref="sign-up">Sign up!</a>
                 </span>
               </form>
+              <flash-message
+              duration="3000"
+              show-close="false"></flash-message>
             </div>
           </div>
         </div>
