@@ -1,3 +1,3 @@
 {
-  angular.module('signIn', []);
+  angular.module('meganote.signIn', []);
 }

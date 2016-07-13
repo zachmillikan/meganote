@@ -26,10 +26,11 @@
         controllerAs: 'vm',
         bindToController: true,
         template: `
+
         <div class="container">
           <div class="row">
             <div class="col-xs-6 col-xs-offset-4">
-              <h3>Welcome Back</h3>
+              <h3>Welcome Back!</h3>
               <form id="new_user" ng-submit="vm.submit()">
                 <p>
                   <label for="username">Username</label><br>
@@ -50,7 +51,7 @@
                 <input type="submit" name="commit" value="Sign In" class="btn btn-default">
                 <span class="login">
                   Don't have an account?
-                  <a ui-sref="sign-up">Sign up!</a>
+                  <a ui-sref="sign-in">Sign in!</a>
                 </span>
               </form>
               <flash-message

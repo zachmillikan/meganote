@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "gulp",
+    "dev": "node_modules/.bin/supervisor -- --debug app.js",
     "prestart": "npm install",
     "postinstall": "bower install",
     "preupdate-webdriver": "npm install"

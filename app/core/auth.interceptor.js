@@ -1,7 +1,7 @@
 {
   angular.module('meganote')
     .factory('AuthInterceptor', AuthInterceptor)
-    .config(intercepterConfig);
+    .config(authConfig);
 
   AuthInterceptor.$inject = ['AuthToken', 'API_BASE'];
   function AuthInterceptor(AuthToken, API_BASE) {
@@ -16,8 +16,8 @@
     };
   }
 
-  intercepterConfig.$inject = ['$httpProvider'];
-  function intercepterConfig($httpProvider) {
+  authConfig.$inject = ['$httpProvider'];
+  function authConfig($httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
   }
 }

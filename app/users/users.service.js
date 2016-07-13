@@ -7,7 +7,7 @@
       'CurrentUser',
       ($http, API_BASE, AuthToken, CurrentUser) => {
 
-        const apiURI = '${API_BASE}users/';
+        const apiURI = `${API_BASE}users/`;
 
         class UsersService {
 
@@ -26,7 +26,7 @@
 
           // Update profile
           update(user) {
-            return $http.put('${apiURI}${user._id}', {user})
+            return $http.put(`${apiURI}${user._id}`, {user})
               .then(
                 res => CurrentUser.set(res.data.user)
               );
@@ -34,7 +34,7 @@
 
           // Sign in
           login(user) {
-            return $http.post('${API_BASE}${sessions}', {
+            return $http.post(`${API_BASE}sessions`, {
               user
             })
             .then(
