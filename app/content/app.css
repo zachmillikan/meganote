@@ -4,11 +4,7 @@ body {
 h1, h2, h3, h4, h5 {
 font-family: Merriweather;
 font-weight: 300;
- }
-
-.usernameDisplay {
-  text-align: right;
-}
+color: #FE5F55; }
 
 .container {
   width: 100% !important;
@@ -33,12 +29,11 @@ header .well {
       cursor: pointer; }
 
 a:link, a:visited, a:hover, a:active {
-  color: white; }
+  color: #FE5F55; }
 
 i.fa-trash-o {
   cursor: pointer;
   color: #ccc;
-  font-size: 150%;
   vertical-align: middle;
   margin-left: 1em; }
   i.fa-trash-o:hover {
@@ -59,7 +54,7 @@ input#note_title {
 
 ul#notes {
   overflow-y: scroll;
-  height: 80vh;
+  height: calc(100vh - 110px);
   list-style: none;
   margin-top: 1em;
   padding: 0;
@@ -74,13 +69,14 @@ ul#notes {
     ul#notes li:first-of-type {
       border-top: none; }
     ul#notes li:hover {
-      color: black; }
-    ul#notes li:hover .note-title {
-      color: black; }
+      color: white;
+      background-color: #FE5F55; }
+      ul#notes li:hover .note-title {
+        color: white; }
     ul#notes li .note-title {
       color: black;
       font-family: Merriweather;
-      font-size: 80%;
+      font-size: 120%;
       font-weight: 300; }
     ul#notes li .note-body {
       height: 54px;
@@ -113,7 +109,7 @@ span.login {
 .ta-editor {
   margin-top: 0.5em; }
 
-  body .alert.alert-success {
+body .alert.alert-success {
   padding: 0;
   margin: 0;
   display: inline-block;
