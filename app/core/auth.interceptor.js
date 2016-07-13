@@ -9,7 +9,7 @@
       request(req) {
         const token = AuthToken.get();
         if(token && req.url.includes(API_BASE)){
-          req.headers.Autherization = token;
+          req.headers.Authorization = token;
         }
         return req;
       }
