@@ -12,7 +12,7 @@
           var vm = this;
           UsersService.login(vm.user)
             .then(
-              () => $state.go('notes-form', {noteId: undefined })
+              () => $state.go('notes.form', {noteId: undefined })
             )
             .catch(
               () => Flash.create('danger', 'Unable to log user in, check credentials.')
@@ -61,7 +61,7 @@
           </div>
         </div>
 
-        `
+        `,
       };
     }
   ]);
