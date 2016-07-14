@@ -12,7 +12,10 @@
       controller: 'NotesController',
       controllerAs: 'vm',
       resolve: {
-        notesLoaded: notesLoaded
+        authenticated: authenticated
+      },
+      data: {
+        title: 'Notes'
       }
     })
 
@@ -25,8 +28,11 @@
     });
   }
 
-  notesLoaded.$inject = ['NotesService'];
-  function notesLoaded(NotesService) {
-    return NotesService.getNotes();
+  authenticated.$inject = ['CurrentUser'];
+  function authenticated(CurrentUser) {
+    return new Promise((resolve, reject) => {
+      if (CurrentUser.signedIn()) { resolve(); }
+      else { reject(); }
+    });
   }
 }
