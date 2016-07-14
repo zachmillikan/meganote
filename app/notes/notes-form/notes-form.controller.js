@@ -9,8 +9,13 @@
     vm.clearForm = clearForm;
     vm.save = save;
     vm.destroy = destroy;
+    vm.refresh = refresh;
 
     /////////////////
+
+    function refresh() {
+      $state.go('notes.form', {noteId: undefined });
+    }
 
     function get() {
       if ($state.params.noteId) {
@@ -50,10 +55,10 @@
     }
 
     function destroy() {
-      Note.destroy(vm.note)
-        .then(
-          () => vm.clearForm()
-        );
+      vm.note.$delete({ id: vm.note._id })
+        .then(() => {
+          vm.refresh();
+        });
     }
   }
 }
