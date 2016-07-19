@@ -3,6 +3,7 @@
     'ui.router',
     'ngFlash',
     'textAngular',
+    'ng.httpLoader',
     'ngResource',
     'meganote.notes',
     'meganote.notesForm',
@@ -13,9 +14,10 @@
     .config(config)
     .run(run);
 
-  config.$inject = ['$urlRouterProvider'];
-  function config($urlRouterProvider) {
+  config.$inject = ['$urlRouterProvider', 'httpMethodInterceptorProvider'];
+  function config($urlRouterProvider, httpMethodInterceptorProvider) {
     $urlRouterProvider.otherwise('/sign-up');
+    httpMethodInterceptorProvider.whitelistDomain('localhost');
   }
 
   run.$inject = ['$rootScope', '$state'];

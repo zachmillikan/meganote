@@ -12,7 +12,7 @@
       controller: 'NotesController',
       controllerAs: 'vm',
       resolve: {
-        authenticated: authenticated
+        authenticated,
       },
       data: {
         title: 'Notes'
@@ -23,8 +23,13 @@
       url: '/:noteId',
       templateUrl: 'notes/notes-form/notes-form.html',
       controller: 'NotesFormController',
-      controllerAs: 'vm'
-
+      controllerAs: 'vm',
+      data: {
+        title: 'Notes'
+      },
+      onExit: ['Flash', (Flash) => {
+        Flash.clear();
+      }],
     });
   }
 

@@ -5,7 +5,7 @@
   NotesFormController.$inject = ['$scope', '$state', 'Flash', 'Note'];
   function NotesFormController($scope, $state, Flash, Note) {
     const vm = this;
-    vm.note = vm.get();
+    vm.note = get();
     vm.clearForm = clearForm;
     vm.save = save;
     vm.destroy = destroy;
@@ -14,7 +14,7 @@
     /////////////////
 
     function refresh() {
-      $state.go('notes.form', {noteId: undefined });
+      $scope.$parent.vm.refresh();
     }
 
     function get() {
